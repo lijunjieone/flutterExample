@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_app3/home.dart';
+import 'package:flutter_app3/idea/idea_page.dart';
 import 'package:flutter_app3/index/navigation_icon_view.dart';
 
 class Index extends StatefulWidget {
@@ -44,7 +45,7 @@ class _IndexState extends State<Index> with TickerProviderStateMixin {
 
     _pageList = <StatefulWidget> [
       new MyHomePage(title: 'Flutter2 Demo Home Page'),
-      new MyHomePage(title: 'Flutter3 Demo Home Page'),
+      new IdeaPage(),
     ];
     _currentPage = _pageList[_currentIndex];
   }
