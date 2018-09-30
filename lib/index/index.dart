@@ -1,7 +1,7 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:flutter_app3/home.dart';
+import 'package:flutter_app3/my.dart';
 import 'package:flutter_app3/home/home.dart';
 import 'package:flutter_app3/idea/idea_page.dart';
 import 'package:flutter_app3/index/navigation_icon_view.dart';
