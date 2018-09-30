@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> {
     return new DefaultTabController(length: 3, child: new Scaffold(
       appBar: new AppBar(
         title: barSearch(),
-          bottom: new TabBar(labelColor: Colors.blue,
+          bottom: new TabBar(labelColor: Colors.black87,
           unselectedLabelColor: Colors.red,
           tabs: [
             new Tab(text:"关注"),
@@ -65,7 +65,7 @@ class _HomePageState extends State<HomePage> {
           ]),
       ),
       body: new TabBarView(children: [
-        new MyApp(),
+        new SearchPage(),
         new MyApp(),
         new MyApp(),
       ]),

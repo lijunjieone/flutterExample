@@ -19,7 +19,7 @@ class _SearchPageState extends State<SearchPage> {
            new Container(
              child: new FlatButton.icon(onPressed: () {
                Navigator.of(context).pop();
-             }, icon: new Icon(Icons.arrow_back,color:Colors.blue) , label: new Text("")
+             }, icon: new Icon(Icons.arrow_back,color:Colors.black12) , label: new Text("")
              ),
              width: 60.0,
            ),
