@@ -19,13 +19,13 @@ class DrawerPage extends StatelessWidget {
         padding: EdgeInsets.zero,
           children: <Widget>[
             DrawerHeader(
-              child: Text("DrawerHeader"),
+              child: Text("Some Examples"),
               decoration: BoxDecoration(
                 color:Colors.blue,
               ),
             ),
             ListTile(
-              title: Text("Item 1"),
+              title: Text("Navigation"),
               onTap: () {
                 Navigator.pop(context);
 
@@ -33,7 +33,7 @@ class DrawerPage extends StatelessWidget {
               },
             ),
             ListTile(
-              title: Text("Item 2"),
+              title: Text("MainPage"),
               onTap: () {
                 Navigator.pop(context);
                 page.changeItem(1);
