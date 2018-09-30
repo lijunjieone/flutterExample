@@ -9,6 +9,11 @@
 - 网络例子
 - 导航站例子
 
+
+# 参考
+- [知乎高仿](https://github.com/HackSoul/zhihu-flutter.git)
+
+
 ## Getting Started
 
 For help getting started with Flutter, view our online

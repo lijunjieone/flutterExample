@@ -6,50 +6,56 @@ import 'package:flutter_app3/my.dart';
 import 'package:flutter_app3/home/home.dart';
 import 'package:flutter_app3/index/index.dart';
 
-
 class DrawerPage extends StatelessWidget {
   ContainerPage page = new ContainerPage();
+  Map<String, StatefulWidget> pages = new HashMap();
+
+  void init() {
+    pages["Main"] = new MyHomePage(title: "Main");
+    pages["Index"] = new Index();
+    pages["HttpList"] = new MyGetHttpData();
+  }
+
   @override
   Widget build(BuildContext context) {
-
+    init();
     return Scaffold(
       appBar: AppBar(title: Text("drawer")),
       body: page,
       drawer: Drawer(
-        child: ListView(
-        padding: EdgeInsets.zero,
-          children: <Widget>[
-            DrawerHeader(
-              child: Text("Some Examples"),
-              decoration: BoxDecoration(
-                color:Colors.blue,
-              ),
-            ),
-            ListTile(
-              title: Text("Navigation"),
-              onTap: () {
-                Navigator.pop(context);
-
-              page.changeItem(0);
-              },
-            ),
-            ListTile(
-              title: Text("MainPage"),
-              onTap: () {
-                Navigator.pop(context);
-                page.changeItem(1);
-              },
-            ),
-
-            ListTile(
-              title: Text("GetListFromNetwork"),
-              onTap: () {
-                Navigator.pop(context);
-                page.changeItem(2);
-              },
-            )
-          ],
-      ),
+        child: new ListView.builder(
+            itemCount: pages.keys.length + 1,
+            itemBuilder: (BuildContext context, int index) {
+              if (index == 0) {
+                return new Container(
+                  child: new DrawerHeader(
+                    child: Text("Some Examples"),
+                    decoration: BoxDecoration(
+                      color: Colors.blue,
+                    ),
+                  ),
+                );
+              } else {
+                String key = pages.keys.elementAt(index - 1);
+                return new Container(
+                  child: new Center(
+                    child: new Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: <Widget>[
+                        new ListTile(
+                          title: new Text(key),
+                          onTap: () {
+                            Navigator.pop(context);
+//                            page.changeItem(index);
+                            page.changeWidget(pages[key]);
+                          },
+                        )
+                      ],
+                    ),
+                  ),
+                );
+              }
+            }),
       ),
     );
   }
@@ -63,59 +69,29 @@ class ContainerPage extends StatefulWidget {
     return state;
   }
 
-
-  void changeItem(int index) {
-    state.changeItem(index);
+  void changeWidget(StatefulWidget widget) {
+    state.changeWidget(widget);
   }
-
 }
 
-
-class _ContainerPageState extends State<ContainerPage> with TickerProviderStateMixin {
-  int _currentIndex = 1;
-  List<StatefulWidget> _pageList;
-  StatefulWidget _currentPage;
-
+class _ContainerPageState extends State<ContainerPage>
+    with TickerProviderStateMixin {
+  StatefulWidget _currentPage =new MyHomePage(title: "Main");
   @override
   void initState() {
     super.initState();
-
-    _pageList = [
-      new Index(),
-      new MyHomePage(title: 'Flutter2 Demo Home Page'),
-      new MyGetHttpData(),
-    ];
-
-    _currentPage = _pageList[_currentIndex];
   }
 
-
-  void changeItem(int index) {
-
+  void changeWidget(StatefulWidget widget) {
     setState(() {
-      _currentIndex = index;
-      _currentPage = _pageList[_currentIndex];
-    });
-//    _rebuild();
-
-  }
-
-  void _rebuild() {
-    setState(() {
-
+      _currentPage = widget;
     });
   }
+
   @override
   Widget build(BuildContext context) {
-
     return new Scaffold(
-      body: new Center(
-        child: _currentPage
-      ),
+      body: new Center(child: _currentPage),
     );
-
-
-
   }
-
 }
