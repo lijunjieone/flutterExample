@@ -1,6 +1,7 @@
 import 'dart:collection';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_app3/examples/http_get.dart';
 import 'package:flutter_app3/my.dart';
 import 'package:flutter_app3/home/home.dart';
 import 'package:flutter_app3/index/index.dart';
@@ -38,6 +39,14 @@ class DrawerPage extends StatelessWidget {
                 Navigator.pop(context);
                 page.changeItem(1);
               },
+            ),
+
+            ListTile(
+              title: Text("GetListFromNetwork"),
+              onTap: () {
+                Navigator.pop(context);
+                page.changeItem(2);
+              },
             )
           ],
       ),
@@ -74,6 +83,7 @@ class _ContainerPageState extends State<ContainerPage> with TickerProviderStateM
     _pageList = [
       new Index(),
       new MyHomePage(title: 'Flutter2 Demo Home Page'),
+      new MyGetHttpData(),
     ];
 
     _currentPage = _pageList[_currentIndex];
