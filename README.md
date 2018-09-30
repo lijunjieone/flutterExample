@@ -1,6 +1,13 @@
-# flutter_app3
+# 目标
 
-A new Flutter application.
+一些例子的集合
+
+# 例子描述
+
+- 抽屉
+- 根据抽屉项更新主界面
+- 网络例子
+- 导航站例子
 
 ## Getting Started
 
