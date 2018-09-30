@@ -18,20 +18,14 @@ class _IdeaPageState extends State<IdeaPage> {
   @override
   Widget build(BuildContext context) {
 
-    return new MaterialApp(
-      home:new Scaffold(
+    return
+      new Scaffold(
         appBar: new AppBar(
-          title: new Text("Think"),
-            actions: <Widget>[
-              new Container(
-
-              )
-            ],
+          title: new Text("Think")
         ),
         body: new Center(
-          child: null,
+          child: new Text("Container"),
         ),
-      )
     );
   }
 

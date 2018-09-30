@@ -42,7 +42,7 @@ class _HomePageState extends State<HomePage> {
                   color:Colors.blue,width: 1.0)
                 )
               ),
-                height: 14.0,
+                height: 2.0,
                 width: 1.0,
             ),
         ],
@@ -65,7 +65,7 @@ class _HomePageState extends State<HomePage> {
           ]),
       ),
       body: new TabBarView(children: [
-        new SearchPage(),
+        new MyApp(),
         new MyApp(),
         new MyApp(),
       ]),
