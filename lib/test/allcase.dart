@@ -19,7 +19,8 @@ class _CaseListState extends State<CaseList> {
               child: new ListTile(
                 title: new Text("test1"),
                 onTap: () {
-                  print("test1");
+                  testcase1();
+
                 },
               ),
             ),
@@ -30,7 +31,7 @@ class _CaseListState extends State<CaseList> {
                   style: new TextStyle(fontSize: 20.0, color: Colors.blue),
                 ),
                 onTap: () {
-                  print("test2");
+                  testcase2();
                 },
               ),
             )
@@ -39,4 +40,14 @@ class _CaseListState extends State<CaseList> {
       ),
     );
   }
+}
+
+
+
+void testcase1() {
+  print("test1");
+}
+
+void testcase2() {
+  print("test2");
 }
