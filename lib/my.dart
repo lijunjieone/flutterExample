@@ -1,3 +1,4 @@
+import 'dart:async';
 
 import 'package:flutter/material.dart';
 
@@ -23,7 +24,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
 
@@ -44,6 +44,26 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+
+  Future _getUserInfo() async {
+    await new Future.delayed(new Duration(milliseconds: 3000));
+    return "我是用户";
+  }
+
+  /// 加载用户信息，顺便打印时间看看顺序
+  Future _loadUserInfo() async {
+    print("_loadUserInfo:${new DateTime.now()}");
+    print(await _getUserInfo());
+    print("_loadUserInfo:${new DateTime.now()}");
+  }
+
+  @override
+  void initState() {
+    print("initState:${new DateTime.now()}");
+    _loadUserInfo();
+    print("initState:${new DateTime.now()}");
+    super.initState();
+  }
 
   void _incrementCounter() {
     setState(() {

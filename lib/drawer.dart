@@ -2,6 +2,7 @@ import 'dart:collection';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_app3/examples/http_get.dart';
+import 'package:flutter_app3/index/hello.dart';
 import 'package:flutter_app3/my.dart';
 import 'package:flutter_app3/home/home.dart';
 import 'package:flutter_app3/index/index.dart';
@@ -14,6 +15,7 @@ class DrawerPage extends StatelessWidget {
     pages["Main"] = new MyHomePage(title: "Main");
     pages["Index"] = new Index();
     pages["HttpList"] = new MyGetHttpData();
+    pages["Hello"] = new HelloWorld2();
   }
 
   @override
