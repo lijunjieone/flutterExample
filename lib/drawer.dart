@@ -6,6 +6,7 @@ import 'package:flutter_app3/index/hello.dart';
 import 'package:flutter_app3/my.dart';
 import 'package:flutter_app3/home/home.dart';
 import 'package:flutter_app3/index/index.dart';
+import 'package:flutter_app3/test/allcase.dart';
 
 class DrawerPage extends StatelessWidget {
   ContainerPage page = new ContainerPage();
@@ -16,6 +17,7 @@ class DrawerPage extends StatelessWidget {
     pages["Index"] = new Index();
     pages["HttpList"] = new MyGetHttpData();
     pages["Hello"] = new HelloWorld2();
+    pages["Case"] = new CaseList();
   }
 
   @override
